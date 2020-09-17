@@ -12,3 +12,5 @@
    1. **Import Project**, y seleccionar la carpeta del proyecto.
    1. Marcar **Create Project from external model**, elegir **Maven**.
    1. **Next** … **Finish**.
+   
+[![Build Status](https://travis-ci.org/OdiseoSSJ/iwvg-devops-ulises-mateo.svg?branch=master)](https://travis-ci.org/OdiseoSSJ/iwvg-devops-ulises-mateo)
