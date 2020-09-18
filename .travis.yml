@@ -20,4 +20,4 @@ deploy:
     secure: $HEROKU
   on:
     branch: master
-  app: iwvg-devops-ulises-mateo
+  app: OdiseoSSJ/iwvg-devops-ulises-mateo
