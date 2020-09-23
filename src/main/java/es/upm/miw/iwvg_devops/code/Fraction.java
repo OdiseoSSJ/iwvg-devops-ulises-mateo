@@ -59,6 +59,10 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
+    public boolean isNegative() {
+        return this.numerator < 0 || this.denominator < 0;
+    }
+
     public boolean isProper() {
         return this.numerator < this.denominator;
     }
