@@ -42,7 +42,12 @@ public class Searches {
     }
 
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
-        return null;
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFamilyName().equals(familyName))
+                .map(user -> user.getFractions())
+                .flatMap(fractions -> fractions.stream())
+                .reduce(((fraction, fraction2) -> fraction2.multiply(fraction)))
+                .get();
     }
 
     public Fraction findFirstFractionDivisionByUserId(String id) {

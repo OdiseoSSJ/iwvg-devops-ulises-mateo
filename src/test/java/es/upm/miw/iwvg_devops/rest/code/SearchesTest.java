@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SearchesTest {
 
@@ -51,6 +52,9 @@ class SearchesTest {
     void testFindFractionSubtractionByUserName() {
     }
 
+    @Test
     void testFindFractionMultiplicationByUserFamilyName() {
+        assertTrue(new Fraction(0, 1)
+                .isEquivalent(new Searches().findFractionMultiplicationByUserFamilyName("Fernandez")));
     }
 }
