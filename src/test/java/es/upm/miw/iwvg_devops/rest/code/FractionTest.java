@@ -3,7 +3,7 @@ package es.upm.miw.iwvg_devops.rest.code;
 import es.upm.miw.iwvg_devops.code.Fraction;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FractionTest {
 
@@ -39,43 +39,45 @@ public class FractionTest {
 
     @Test
     void testIsProper() {
-        assertEquals(true, fractionTest.isProper());
+        assertTrue(fractionTest.isProper());
     }
 
     @Test
     void testIsImproper() {
-        assertEquals(false, fractionTest.isImproper());
+
+        assertFalse(fractionTest.isImproper());
     }
 
     @Test
     void testIsEquivalent() {
         Fraction fraction = new Fraction(14, 22);
-        assertEquals(true, fractionTest.isEquivalent(fraction));
+        assertTrue(fractionTest.isEquivalent(fraction));
     }
 
     @Test
     void testAdd() {
         Fraction fraction = new Fraction(1, 2);
         Fraction expectedFraction = new Fraction(25, 22);
-        assertEquals(true, fractionTest.add(fraction).isEquivalent(expectedFraction));
+        assertTrue(fractionTest.add(fraction).isEquivalent(expectedFraction));
     }
 
     @Test
     void testMultiply() {
         Fraction fraction = new Fraction(1, 2);
         Fraction expectedFraction = new Fraction(7, 22);
-        assertEquals(true, fractionTest.multiply(fraction).isEquivalent(expectedFraction));
+        assertTrue(fractionTest.multiply(fraction).isEquivalent(expectedFraction));
     }
 
     @Test
     void testDivide() {
         Fraction fraction = new Fraction(1, 2);
         Fraction expectedFraction = new Fraction(14, 11);
-        assertEquals(true, fractionTest.divide(fraction).isEquivalent(expectedFraction));
+        assertTrue(fractionTest.divide(fraction).isEquivalent(expectedFraction));
     }
 
     @Test
     void testToString() {
+
         assertEquals("Fraction{numerator=7, denominator=11}", fractionTest.toString());
     }
 }
