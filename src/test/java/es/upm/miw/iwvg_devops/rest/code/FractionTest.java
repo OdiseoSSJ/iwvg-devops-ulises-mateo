@@ -38,6 +38,43 @@ public class FractionTest {
     }
 
     @Test
+    void testIsProper() {
+        assertEquals(true, fractionTest.isProper());
+    }
+
+    @Test
+    void testIsImproper() {
+        assertEquals(false, fractionTest.isImproper());
+    }
+
+    @Test
+    void testIsEquivalent() {
+        Fraction fraction = new Fraction(14, 22);
+        assertEquals(true, fractionTest.isEquivalent(fraction));
+    }
+
+    @Test
+    void testAdd() {
+        Fraction fraction = new Fraction(1, 2);
+        Fraction expectedFraction = new Fraction(25, 22);
+        assertEquals(true, fractionTest.add(fraction).isEquivalent(expectedFraction));
+    }
+
+    @Test
+    void testMultiply() {
+        Fraction fraction = new Fraction(1, 2);
+        Fraction expectedFraction = new Fraction(7, 22);
+        assertEquals(true, fractionTest.multiply(fraction).isEquivalent(expectedFraction));
+    }
+
+    @Test
+    void testDivide() {
+        Fraction fraction = new Fraction(1, 2);
+        Fraction expectedFraction = new Fraction(14, 11);
+        assertEquals(true, fractionTest.divide(fraction).isEquivalent(expectedFraction));
+    }
+
+    @Test
     void testToString() {
         assertEquals("Fraction{numerator=7, denominator=11}", fractionTest.toString());
     }

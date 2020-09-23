@@ -82,7 +82,7 @@ public class Fraction {
     }
 
     public Fraction divide(Fraction fraction) {
-        return new Fraction(this.denominator * fraction.getNumerator(), this.numerator * fraction.getDenominator());
+        return new Fraction(this.numerator * fraction.getDenominator(), this.denominator * fraction.getNumerator());
     }
 
     @Override
