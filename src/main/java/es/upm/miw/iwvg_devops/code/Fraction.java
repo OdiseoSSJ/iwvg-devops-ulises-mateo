@@ -56,7 +56,14 @@ public class Fraction {
     }
 
     public double decimal() {
-        return (double) numerator / denominator;
+        if (denominator != 0)
+            return (double) numerator / denominator;
+        else
+            return 0.0;
+    }
+
+    public boolean isNegative() {
+        return this.numerator < 0 || this.denominator < 0;
     }
 
     public boolean isProper() {
@@ -83,6 +90,13 @@ public class Fraction {
 
     public Fraction divide(Fraction fraction) {
         return new Fraction(this.numerator * fraction.getDenominator(), this.denominator * fraction.getNumerator());
+    }
+
+    public Fraction compareHigher(Fraction fraction) {
+        if (this.decimal() > fraction.decimal())
+            return this;
+        else
+            return fraction;
     }
 
     @Override

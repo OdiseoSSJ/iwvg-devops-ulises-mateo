@@ -76,6 +76,18 @@ public class FractionTest {
     }
 
     @Test
+    void testIsNegative() {
+        assertFalse(fractionTest.isNegative());
+    }
+
+    @Test
+    void testCompareHigher() {
+        Fraction fraction = new Fraction(1, 2);
+        assertEquals(fractionTest, fractionTest.compareHigher(fraction));
+    }
+
+
+    @Test
     void testToString() {
 
         assertEquals("Fraction{numerator=7, denominator=11}", fractionTest.toString());
