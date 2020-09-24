@@ -2,6 +2,7 @@ package es.upm.miw.iwvg_devops.code;
 
 import org.apache.logging.log4j.LogManager;
 
+import java.util.Comparator;
 import java.util.stream.Stream;
 
 public class Searches {
@@ -75,7 +76,10 @@ public class Searches {
     }
 
     public Fraction findHighestFraction() {
-        return null;
+        return new UsersDatabase().findAll()
+                .flatMap(user -> user.getFractions().stream())
+                .reduce((fraction, fraction2) -> fraction.compareHigher(fraction2))
+                .get();
     }
 
     public Stream<String> findUserNameByAnyImproperFraction() {

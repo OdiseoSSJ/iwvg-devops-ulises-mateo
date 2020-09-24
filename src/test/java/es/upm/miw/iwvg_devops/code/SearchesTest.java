@@ -63,4 +63,9 @@ class SearchesTest {
         assertEquals(List.of(-0.2, -0.5, -0.0), new Searches().findDecimalFractionByNegativeSignFraction()
                 .collect(Collectors.toList()));
     }
+
+    @Test
+    void testFindHighestFraction() {
+        assertTrue(new Fraction(2, 1).isEquivalent(new Searches().findHighestFraction()));
+    }
 }
