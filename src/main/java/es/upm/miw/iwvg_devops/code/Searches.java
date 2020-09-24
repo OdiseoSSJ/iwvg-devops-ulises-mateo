@@ -97,9 +97,9 @@ public class Searches {
     public Stream<Double> findDecimalFractionByNegativeSignFraction() {
         return new UsersDatabase().findAll()
                 .map(user -> user.getFractions())
-                .flatMap(fractions -> fractions.stream())
-                .filter(fraction -> fraction.isNegative())
-                .map(fraction -> fraction.decimal());
+                .flatMap(myFractions -> myFractions.stream())
+                .filter(myFraction -> myFraction.isNegative())
+                .map(myFraction -> myFraction.decimal());
     }
 
     public Fraction findFractionAdditionByUserId(String id) {
